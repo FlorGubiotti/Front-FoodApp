@@ -1,6 +1,6 @@
 import { Food } from "../Types/Food";
 
-const BASE_URL = "http://localhost:3000/foods";
+const BASE_URL = "https://back-foodapp.onrender.com/foods";
 
 export const FoodServices = {
 
