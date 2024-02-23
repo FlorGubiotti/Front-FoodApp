@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para el cuerpo y la imagen del logo */
+body {
+    background-image: url('/src/images/fondodesktop.jpg');
+    /* Ruta de la imagen de fondo predeterminada para computadoras */
+  }
+  
+  .logo-img {
+    width: 250px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .logo-container {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+  }
+  
+  .btn {
+    width: 150px;
+    height: 150px;
+  }
+  
+  /* Media query para dispositivos móviles */
+  @media (max-width: 767px) {
+    body {
+      background-image: url('/src/images/fondomobile.jpg');
+      /* Ruta de la imagen de fondo para dispositivos móviles */
+    }
+  
+    .logo-img {
+      width: 150px;
+      /* Tamaño de la imagen para dispositivos móviles */
+      height: auto;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .btn {
+      width: 100px;
+      height: 100px;
+    }
+  }
