@@ -1,0 +1,38 @@
+
+/*Estilo para las categorias*/
+
+.Categoria {
+    text-decoration: none;
+    margin: 20px auto;
+    margin-bottom: 40px;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    color: white;
+    overflow: hidden;
+}
+
+.Categoria-borde{
+    position: absolute; 
+    top: 0px; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    border: 5px solid white;
+    border-radius: 15px;
+}
+
+.Categoria-img {
+    width: 70%; 
+    height: auto;
+}
+
+.CategoriaNombre{
+    position: absolute;
+    text-transform: uppercase;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;  
+    font-size: calc(0.5rem + 0.5vw);
+}

@@ -1,0 +1,36 @@
+
+/* Estilos para el Footer*/
+
+.footer {
+  position: fixed;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 1;
+  font-size: 11px;
+}
+.footer .btn {
+  font-size: 14px;
+  font-family: 'Bebas Neue', sans-serif;
+  padding: 8px 16px;
+  background-color: transparent; 
+  color: #fff;
+  height: 30px; 
+  width: 120px; 
+  border: none; 
+  outline: none;
+  cursor: pointer;
+}
+.footer .btn:active {
+  background-color: transparent;
+}
+
+.footer .btn:hover,
+.footer .btn:focus,
+.footer .btn:active {
+  color: #fff;
+}
+

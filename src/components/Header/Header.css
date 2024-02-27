@@ -1,0 +1,19 @@
+
+/* Estilos para el Header */
+
+.container {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Establece la posición relativa para poder posicionar absolutamente el icono */
+}
+
+.icon-container {
+    position: absolute;
+    top: 20px; 
+    right: 10px; 
+}
+
+.icono-es{
+    height: 40px;
+}

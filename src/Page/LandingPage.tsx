@@ -3,10 +3,8 @@ import CategoriaSelector from '../components/CategoriaSelector/CategoriaSelector
 
 const LandingPage = () => {
 
-  const [selectedCategory, setSelectedCategory] = useState<string>(''); // Estado para la categoría seleccionada
+  const [selectedCategory, setSelectedCategory] = useState<number>(); // Estado para la categoría seleccionada
   
-
-
   // Efecto para filtrar las tareas cuando se selecciona una categoría
   useEffect(() => {
     if (selectedCategory) {

@@ -1,31 +1,32 @@
 import { useEffect, useState } from 'react';
 import { FoodServices } from '../../services/FoodServices';
-
-import { Food } from '../../Types/Food';
 import CategoriaSelector from '../CategoriaSelector/CategoriaSelector';
-import Comidas from '../Comidas//Comidas';
+import Comidas from '../Comidas/Comidas';
+import { Food } from '../../Types/Food';
 
 const Categorias = () => {
-  const [foods, setFoods] = useState<Food[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string>(''); // Estado para la categoría seleccionada
 
+  const [foods, setFoods] = useState<Food[]>([]); // Estado para las comidas 
+  const [selectedCategory, setSelectedCategory] = useState<number>(); // Estado para la categoría seleccionada
+
+  {/*Obtengo todas las comidas llamando al método getAllFoods*/}
   useEffect(() => {
     const fetchFoods = async () => {
       const foodsData = await FoodServices.getAllFoods();
       setFoods(foodsData);
     };
-
+    
     fetchFoods();
-  }, []);
+  }, []); 
 
-  // Filtra las tareas por la categoría seleccionada
+  {/*Filtro las comidas según la categoría seleccionada*/}
   const filteredFoods = selectedCategory
-    ? foods.filter(food => food.categoria.toUpperCase() === selectedCategory.toUpperCase())
-    : foods;
-
+  ? foods.filter(food => food.categoria_id === selectedCategory)
+  :foods;
+  
   return (
     <div className="container mt-5">
-      <CategoriaSelector onSelectCategory={setSelectedCategory} /> {/* Pasa la función para manejar la selección de categoría */}
+      <CategoriaSelector onSelectCategory={setSelectedCategory} />
       <Comidas foods={filteredFoods} />
     </div>
   );

@@ -8,9 +8,9 @@ const App = () => {
   return (
     <>
       <Router>
-        <Header />
-          <AppRoutes />
-        <Footer />
+          <Header />
+            <AppRoutes />
+          <Footer />
       </Router>
 
     </>
