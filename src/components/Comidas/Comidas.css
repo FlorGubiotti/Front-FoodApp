@@ -2,15 +2,17 @@
 /* Estilos para las comidas*/
 
 .Card-img {
-    min-height: 300px;
-    max-height: 300px;
+    min-height: 200px;
+    max-height: 200px;
 }
 
 .card {
     border: 4px solid white;
+    margin-top: auto;
     margin-left: 20px;
     margin-right: 20px;
-    border-radius: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;   
 }
 
 
@@ -45,3 +47,8 @@
     font-style: normal;
     color: white;
 }
+
+.slick-slider {
+    max-width: 90%; /* Reduce el ancho para asegurar espacio para las flechas */
+    margin: 0 auto; /* Centra el slider horizontalmente */
+  }

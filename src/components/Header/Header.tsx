@@ -20,10 +20,21 @@ const Header: React.FC = () => {
                 <div className="icon-container">
                     {/*Icono de español*/}
                     <img
-                        className='icono-es'
+                        className='icono'
                         src={'https://cdn-icons-png.flaticon.com/128/197/197593.png'}
                         alt="Icono de idioma español"
                     />
+                    <img
+                        className='icono'
+                        src={'https://cdn-icons-png.flaticon.com/128/8363/8363075.png'}
+                        alt= "Icono de idioma ingles"
+                    />
+                    <img
+                        className='icono'
+                        src= {'https://cdn-icons-png.flaticon.com/128/9906/9906483.png'}
+                        alt= "Icono de idioma italiano"
+                    />
+
                 </div>
             </div>
         </header>

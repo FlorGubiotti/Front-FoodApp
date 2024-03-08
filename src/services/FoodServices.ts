@@ -10,6 +10,7 @@ export const FoodServices = {
   getAllFoods: async (): Promise<Food[]> => {
     const response = await fetch(`${BASE_URL}`);
     const data = await response.json();
+    
     return data;
   },
 
@@ -32,4 +33,6 @@ export const FoodServices = {
     console.log(data);
     return data;
   }
+
+  
 }

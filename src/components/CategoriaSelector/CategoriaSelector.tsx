@@ -22,6 +22,8 @@ const CategoriasSelector: React.FC<CategoriasSelectorProps> = ({ onSelectCategor
         fetchData();
     }, []);
 
+    
+
     return (
         <section className="container mt-3" id="selector-categorias">
             <div className="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 justify-content-center"> {/*Categorias responsivas*/}

@@ -1,11 +1,10 @@
 
 /* Estilos para el Header */
-
 .container {
-    display: block;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; /* Establece la posición relativa para poder posicionar absolutamente el icono */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten segun el ancho del dispositivo*/
 }
 
 .icon-container {
@@ -14,6 +13,29 @@
     right: 10px; 
 }
 
-.icono-es{
-    height: 40px;
+.icono{
+    height: 30px;
+    margin-left: 10px;
+}
+
+.logo-container {
+    flex: 1; /* Toma el espacio disponible */
+    display: flex;
+    justify-content: center; /* Centra el contenido (logo) */
+}
+
+@media (max-width: 768px) {
+    .icon-container {
+        top: 10px;
+        right: 10px;
+    }
+
+    .icono {
+        height: 20px; /* Ajusta el tamaño de los iconos para pantallas pequeñas */
+    }
+
+    .logo-container {
+        flex-basis: 100%; /* Ocupa todo el ancho */
+        order: -1; /* Posiciona el logo arriba */
+    }
 }
