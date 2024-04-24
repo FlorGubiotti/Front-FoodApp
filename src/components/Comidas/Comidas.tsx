@@ -24,8 +24,8 @@ const Comidas = ({ foods }: { foods: Food[] }) => {
         categoriasData = await FoodServices.getAllCategories();
       } else if (language === 'en') {
         categoriasData = await FoodServices.getAllCategoriesEnglish();
-      } else if (language === 'it') {
-        categoriasData = await FoodServices.getAllCategoriesItaliano();
+      } else if (language === 'pt') {
+        categoriasData = await FoodServices.getAllCategoriesPortugues();
       }
       // Verificar que categoriasData no sea undefined antes de asignarlo
       if (categoriasData) {
@@ -68,34 +68,57 @@ const Comidas = ({ foods }: { foods: Food[] }) => {
   };
   return (
     <section className="container-fluid mt-5" id="categorias">
-  
-      {/*Mapeo todas las categorias*/}
+      {/* Mapeo todas las categorias */}
       {categorias.map((categoria, categoriaIndex) => {
-        {/*Filtro el id de la categoria con el atributo categoria_id de foods*/ }
+        // Filtro el id de la categoria con el atributo categoria_id de foods
         const filteredFoods = foods.filter(food => food.categoria_id === categoria.id);
         if (filteredFoods.length > 0) {
+          // Verificar si la categoría tiene solo un elemento
+          const isSingleItemCategory = filteredFoods.length === 1;
+  
           return (
-            <div className="row" key={categoriaIndex}>
-              <Slider className='slick-slider col-12' {...settings}>
-                {filteredFoods.map((food, foodIndex) => (
-                  <div key={foodIndex} className="col-12 col-md-6 col-xl-4 mb-4">
-                    <div className="card h-100 card-transparent">
-                      <img
-                        className="card-img-top"
-                        src={food.imagen}
-                        alt={food.nombre}
-                      />
-                      <div className="card-body p-4">
-                        <div className="text-center">
-                          <h5 className="card-title fw-bold">{food.nombre}</h5>
-                          <p className="card-description">{food.descripcion}</p>
-                          <span className="card-price">{food.precio}</span>
-                        </div>
+            <div className="row justify-content-center" key={categoriaIndex}>
+              {isSingleItemCategory ? (
+                // Mostrar la categoría como una tarjeta individual sin slider
+                <div className="col-12 col-md-6 col-xl-4 mb-4">
+                  <div className="card h-100 card-transparent">
+                    <img
+                      className="card-img-top"
+                      src={filteredFoods[0].imagen}
+                      alt={filteredFoods[0].nombre}
+                    />
+                    <div className="card-body p-4">
+                      <div className="text-center">
+                        <h5 className="card-title fw-bold">{filteredFoods[0].nombre}</h5>
+                        <p className="card-description">{filteredFoods[0].descripcion}</p>
+                        <span className="card-price">{filteredFoods[0].precio}</span>
                       </div>
                     </div>
                   </div>
-                ))}
-              </Slider>
+                </div>
+              ) : (
+                // Mostrar la categoría con slider
+                <Slider className='slick-slider col-12' {...settings}>
+                  {filteredFoods.map((food, foodIndex) => (
+                    <div key={foodIndex} className="col-12 col-md-6 col-xl-4 mb-4">
+                      <div className="card h-100 card-transparent">
+                        <img
+                          className="card-img-top"
+                          src={food.imagen}
+                          alt={food.nombre}
+                        />
+                        <div className="card-body p-4">
+                          <div className="text-center">
+                            <h5 className="card-title fw-bold">{food.nombre}</h5>
+                            <p className="card-description">{food.descripcion}</p>
+                            <span className="card-price">{food.precio}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </Slider>
+              )}
             </div>
           );
         }
@@ -104,6 +127,6 @@ const Comidas = ({ foods }: { foods: Food[] }) => {
     </section>
   );
   
-};
+}  
 
 export default Comidas;

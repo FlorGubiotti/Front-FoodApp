@@ -5,8 +5,8 @@ const BASE_URL = "https://back-foodapp.onrender.com/foodsEspaniol";
 const BASE_URL1 = "https://back-foodapp.onrender.com/categoriesEspaniol";
 const BASE_URLINGLES = "https://back-foodapp.onrender.com/foodsEnglish";
 const BASE_URL1INGLES = "https://back-foodapp.onrender.com/categoriesEnglish";
-const BASE_URLITALIANO = "https://back-foodapp.onrender.com/foodsItaliano";
-const BASE_URL1ITALIANO = "https://back-foodapp.onrender.com/categoriesItaliano";
+const BASE_URLPORTUGUES = "https://back-foodapp.onrender.com/foodsPortugues";
+const BASE_URL1PORTUGUES = "https://back-foodapp.onrender.com/categoriesPortugues";
 
 export const FoodServices = {
 
@@ -61,24 +61,24 @@ export const FoodServices = {
     return data;
   },
 
-   /*Obtener todas las comidas en italiano*/
-   getAllFoodsItaliano: async (): Promise<Food[]> => {
-    const response = await fetch(`${BASE_URLITALIANO}`);
+   /*Obtener todas las comidas en portugues*/
+   getAllFoodsPortugues: async (): Promise<Food[]> => {
+    const response = await fetch(`${BASE_URLPORTUGUES}`);
     const data = await response.json();
     
     return data;
   },
 
-  /*Obtener todas las categorias de comidas en italiano*/
-  getAllCategoriesItaliano: async (): Promise<Categories[]> => {
-    const response = await fetch(`${BASE_URL1ITALIANO}`);
+  /*Obtener todas las categorias de comidas en portugues*/
+  getAllCategoriesPortugues: async (): Promise<Categories[]> => {
+    const response = await fetch(`${BASE_URL1PORTUGUES}`);
     const data = await response.json();
     return data;
   },
 
-  /*Obtener todas las comidas de una categoria en italiano*/
-  getFoodsInCategoryItaliano: async (id: number): Promise<Food[]> => {
-    const response = await fetch(`${BASE_URLITALIANO}?categoria_id=${id}`);
+  /*Obtener todas las comidas de una categoria en portugues*/
+  getFoodsInCategoryPortuges: async (id: number): Promise<Food[]> => {
+    const response = await fetch(`${BASE_URLPORTUGUES}?categoria_id=${id}`);
     const data = await response.json();
     console.log(data);
     return data;

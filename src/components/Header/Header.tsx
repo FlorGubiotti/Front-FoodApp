@@ -16,9 +16,9 @@ const Header: React.FC = () => {
         setLanguage('en');
     };
 
-    // Función para cambiar el idioma al italiano
-    const handleSetItalian = () => {
-        setLanguage('it');
+    // Función para cambiar el idioma al portugues
+    const handleSetPortuguese = () => {
+        setLanguage('pt');
     };
 
     return (
@@ -50,9 +50,9 @@ const Header: React.FC = () => {
                     />
                     <img
                         className='icono'
-                        src= {'https://cdn-icons-png.flaticon.com/128/9906/9906483.png'}
-                        alt= "Icono de idioma italiano"
-                        onClick={handleSetItalian}
+                        src= {'https://cdn-icons-png.flaticon.com/128/3909/3909361.png'}
+                        alt= "Icono de idioma portugues"
+                        onClick={handleSetPortuguese}
                     />
 
                 </div>

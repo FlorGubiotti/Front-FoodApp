@@ -18,8 +18,8 @@ const ComidasPage: React.FC = () => {
         foodsData = await FoodServices.getAllFoods();
       } else if (language === 'en') {
         foodsData = await FoodServices.getAllFoodsEnglish();
-      } else if (language === 'it') {
-        foodsData = await FoodServices.getAllFoodsItaliano();
+      } else if (language === 'pt') {
+        foodsData = await FoodServices.getAllFoodsPortugues();
       }
       // Verificar que foodsData no sea undefined antes de asignarlo
       if (foodsData) {

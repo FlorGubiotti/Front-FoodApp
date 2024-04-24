@@ -24,8 +24,8 @@ const CategoriasSelector: React.FC<CategoriasSelectorProps> = ({ onSelectCategor
                 categoriasData = await FoodServices.getAllCategories();
             } else if (language === 'en') {
                 categoriasData = await FoodServices.getAllCategoriesEnglish();
-            } else if (language === 'it') {
-                categoriasData = await FoodServices.getAllCategoriesItaliano();
+            } else if (language === 'pt') {
+                categoriasData = await FoodServices.getAllCategoriesPortugues();
             }
             // Verificar que categoriasData no sea undefined antes de asignarlo
             if (categoriasData) {
