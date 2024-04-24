@@ -50,7 +50,7 @@ const Header: React.FC = () => {
                     />
                     <img
                         className='icono'
-                        src= {'https://cdn-icons-png.flaticon.com/128/3909/3909361.png'}
+                        src= {'https://cdn-icons-png.flaticon.com/128/9906/9906449.png'}
                         alt= "Icono de idioma portugues"
                         onClick={handleSetPortuguese}
                     />
