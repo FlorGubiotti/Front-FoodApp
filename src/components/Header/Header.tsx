@@ -1,9 +1,26 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../index.css';
 import './Header.css';
+import { useLanguageContext } from '../../LanguajeContext/LanguajeContext';
 
 const Header: React.FC = () => {
+    const { setLanguage } = useLanguageContext(); // Obtengo la función para cambiar el idioma del contexto
+
+    // Función para cambiar el idioma al español
+    const handleSetSpanish = () => {
+        setLanguage('es');
+    };
+
+    // Función para cambiar el idioma al inglés
+    const handleSetEnglish = () => {
+        setLanguage('en');
+    };
+
+    // Función para cambiar el idioma al italiano
+    const handleSetItalian = () => {
+        setLanguage('it');
+    };
+
     return (
         <header>
             <div className="container">
@@ -23,16 +40,19 @@ const Header: React.FC = () => {
                         className='icono'
                         src={'https://cdn-icons-png.flaticon.com/128/197/197593.png'}
                         alt="Icono de idioma español"
+                        onClick={handleSetSpanish}
                     />
                     <img
                         className='icono'
                         src={'https://cdn-icons-png.flaticon.com/128/8363/8363075.png'}
                         alt= "Icono de idioma ingles"
+                        onClick={handleSetEnglish}
                     />
                     <img
                         className='icono'
                         src= {'https://cdn-icons-png.flaticon.com/128/9906/9906483.png'}
                         alt= "Icono de idioma italiano"
+                        onClick={handleSetItalian}
                     />
 
                 </div>

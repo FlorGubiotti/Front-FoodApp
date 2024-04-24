@@ -4,11 +4,13 @@ import ComidasPage from "../Page/ComidasPage"
 
 const AppRoutes: React.FC = () => {
   return (
-    <Routes>
+    
+      <Routes>
         {/*Manejo de las rutas para LandingPage y ComidasPage*/}
-        <Route path="/" element={<LandingPage/>}/>
-        <Route path="/comidas/:categoria" element={<ComidasPage/>}/>
-    </Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/comidas/:categoria" element={<ComidasPage />} />
+      </Routes>
+
   )
 }
 
