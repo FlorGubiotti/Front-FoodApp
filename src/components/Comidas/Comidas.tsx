@@ -76,7 +76,6 @@ const Comidas = ({ foods }: { foods: Food[] }) => {
         if (filteredFoods.length > 0) {
           return (
             <div className="row" key={categoriaIndex}>
-              <h2 className="col-12 mb-4">{categoria.nombre}</h2>
               <Slider className='slick-slider col-12' {...settings}>
                 {filteredFoods.map((food, foodIndex) => (
                   <div key={foodIndex} className="col-12 col-md-6 col-xl-4 mb-4">
