@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Comidas from "../components/Comidas/Comidas";
 import { FoodServices } from "../services/FoodServices";
-import { Food } from "../Types/Food"; 
-import { useLanguageContext } from "../LanguajeContext/LanguajeContext";
+import { Food } from "../Types/Food";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 const ComidasPage: React.FC = () => {
   const { categoria } = useParams<{ categoria?: string }>(); 
   const [foods, setFoods] = useState<Food[]>([]); //
   const [filteredFoods, setFilteredFoods] = useState<Food[]>([]);
-  const { language } = useLanguageContext();
+  const language = useSelector((state: RootState) => state.language.language);
 
   useEffect(() => {
     const fetchFoods = async () => {

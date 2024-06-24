@@ -6,13 +6,14 @@ import { FoodServices } from '../../services/FoodServices';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useLanguageContext } from '../../LanguajeContext/LanguajeContext';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 
 
 {/*Recibe un array de objetos del tipo Food[]*/ }
 const Comidas = ({ foods }: { foods: Food[] }) => {
 
-  const { language } = useLanguageContext();
+  const language = useSelector((state: RootState) => state.language.language);
 
   {/* Obtengo todas las categorias*/ }
   const [categorias, setCategorias] = useState<Categories[]>([]);
