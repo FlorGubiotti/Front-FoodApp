@@ -1,30 +1,61 @@
-# React + TypeScript + Vite
+# Menú Multilingüe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación de menú donde los usuarios pueden ver las categorías del menú y, al seleccionar cada categoría, ver las comidas incluidas en dicha categoría. Además, maneja la traducción del menú a distintos idiomas.
 
-Currently, two official plugins are available:
+## Tecnologías Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: Biblioteca para construir interfaces de usuario.
+- **Redux**: Librería para el manejo del estado de la aplicación.
+- **Redux Toolkit**: Herramientas oficiales para una mejor integración y manejo del estado con Redux.
+- **React Router**: Enrutador para manejar la navegación dentro de la aplicación.
+- **Slick Carousel**: Para mostrar los elementos en un carrusel.
 
-## Expanding the ESLint configuration
+## Instalación
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
 
-- Configure the top-level `parserOptions` property like this:
+1. Clona el repositorio:
+    ```sh
+    git clone <https://github.com/FlorGubiotti/Front-FoodApp>
+    ```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+2. Navega al directorio del proyecto:
+    ```sh
+    cd <NOMBRE_DEL_PROYECTO>
+    ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3. Instala las dependencias:
+    ```sh
+    npm install
+    ```
+
+4. Inicia la aplicación:
+    ```sh
+    npm run dev
+    ```
+
+## Uso
+
+### Selección de Idioma
+
+La aplicación permite cambiar el idioma del menú a través de iconos que representan las banderas de los idiomas disponibles (español, inglés y portugués). Al hacer clic en un icono, el idioma de la aplicación cambiará y se actualizarán las categorías y comidas mostradas.
+
+### Ver Categorías y Comidas
+
+- Al abrir la aplicación, se mostrarán las categorías disponibles en el menú.
+- Al seleccionar una categoría, se mostrarán las comidas incluidas en dicha categoría.
+- Las comidas se pueden mostrar en un formato de tarjeta o en un carrusel dependiendo de la cantidad de elementos.
+
+## Estructura del Proyecto
+
+- **src/redux/slices/languageSlice.ts**: Maneja el estado del idioma seleccionado.
+- **src/redux/store.ts**: Configura el store de Redux.
+- **src/components/Header.tsx**: Componente del encabezado que permite cambiar el idioma.
+- **src/components/CategoriaSelector.tsx**: Componente que muestra las categorías del menú.
+- **src/components/Comidas.tsx**: Componente que muestra las comidas en formato de tarjeta o carrusel.
+- **src/components/Categorias.tsx**: Componente que maneja la lógica para filtrar y mostrar las comidas según la categoría seleccionada y el idioma.
+
+## Servicios
+
+Los servicios para obtener los datos de las categorías y comidas se encuentran en `src/services/FoodServices.ts`. Estos servicios realizan las llamadas a la API para obtener los datos en el idioma seleccionado.
+
