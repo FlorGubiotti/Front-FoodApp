@@ -8,6 +8,7 @@ Este proyecto es una aplicación de menú donde los usuarios pueden ver las cate
 - **Redux**: Librería para el manejo del estado de la aplicación.
 - **Redux Toolkit**: Herramientas oficiales para una mejor integración y manejo del estado con Redux.
 - **React Router**: Enrutador para manejar la navegación dentro de la aplicación.
+- **React Slick**: librería para crear carruseles y sliders de contenido con características avanzadas y personalizables.
 - **Slick Carousel**: Para mostrar los elementos en un carrusel.
 
 ## Instalación
@@ -16,7 +17,7 @@ Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
 
 1. Clona el repositorio:
     ```sh
-    git clone <https://github.com/FlorGubiotti/Front-FoodApp>
+    git clone https://github.com/FlorGubiotti/Front-FoodApp
     ```
 
 2. Navega al directorio del proyecto:
@@ -28,8 +29,12 @@ Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
     ```sh
     npm install
     ```
-
-4. Inicia la aplicación:
+4. Asegurate de estar corriendo el back
+   ```sh
+    https://github.com/FlorGubiotti/Back-FoodApp
+   ```
+   Este repositorio contiene la base de datos (json-server) que se utilizará para el programa 
+5. Inicia la aplicación:
     ```sh
     npm run dev
     ```
@@ -58,4 +63,5 @@ La aplicación permite cambiar el idioma del menú a través de iconos que repre
 ## Servicios
 
 Los servicios para obtener los datos de las categorías y comidas se encuentran en `src/services/FoodServices.ts`. Estos servicios realizan las llamadas a la API para obtener los datos en el idioma seleccionado.
+Asegurate de cambiar las constantes BASE_URL por la direccion `https://localhost:3000` en el caso de querer manerar el programa de manera local, sino debes subir tu back a render y colocar el link que te proporciona.
 
