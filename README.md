@@ -29,15 +29,15 @@ Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
     ```sh
     npm install
     ```
-4. Asegurate de estar corriendo el back
+4. Inicia la aplicación:
+    ```sh
+    npm run dev
+    ```
+5. Asegurate de estar corriendo el back
    ```sh
     https://github.com/FlorGubiotti/Back-FoodApp
    ```
    Este repositorio contiene la base de datos (json-server) que se utilizará para el programa 
-5. Inicia la aplicación:
-    ```sh
-    npm run dev
-    ```
 
 ## Uso
 
