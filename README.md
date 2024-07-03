@@ -33,7 +33,7 @@ Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
     ```sh
     npm run dev
     ```
-5. Asegurate de estar corriendo el back
+5. Asegurate de estar corriendo el back:
    ```sh
     https://github.com/FlorGubiotti/Back-FoodApp
    ```
