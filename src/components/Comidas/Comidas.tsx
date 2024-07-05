@@ -18,21 +18,20 @@ const Comidas = ({ foods }: { foods: Food[] }) => {
   {/* Obtengo todas las categorias*/ }
   const [categorias, setCategorias] = useState<Categories[]>([]);
 
+  const isValidLanguage = (lang: string): lang is 'es' | 'en' | 'pt' => {
+    return ['es', 'en', 'pt'].includes(lang);
+  };
+
   useEffect(() => {
     const fetchData = async () => {
-      let categoriasData: Categories[] | undefined;
-      if (language === 'es') {
-        categoriasData = await FoodServices.getAllCategories();
-      } else if (language === 'en') {
-        categoriasData = await FoodServices.getAllCategoriesEnglish();
-      } else if (language === 'pt') {
-        categoriasData = await FoodServices.getAllCategoriesPortugues();
-      }
-      // Verificar que categoriasData no sea undefined antes de asignarlo
-      if (categoriasData) {
-        setCategorias(categoriasData);
+      if (isValidLanguage(language)) {
+        const categoriasData = await FoodServices.getAllCategories(language);
+        if (categoriasData) {
+          setCategorias(categoriasData);
+        }
       }
     };
+
     fetchData();
   }, [language]);
 

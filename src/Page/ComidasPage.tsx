@@ -12,19 +12,17 @@ const ComidasPage: React.FC = () => {
   const [filteredFoods, setFilteredFoods] = useState<Food[]>([]);
   const language = useSelector((state: RootState) => state.language.language);
 
+  const isValidLanguage = (lang: string): lang is 'es' | 'en' | 'pt' => {
+    return ['es', 'en', 'pt'].includes(lang);
+  };
+
   useEffect(() => {
     const fetchFoods = async () => {
-      let foodsData: Food[] | undefined;
-      if (language === 'es') {
-        foodsData = await FoodServices.getAllFoods();
-      } else if (language === 'en') {
-        foodsData = await FoodServices.getAllFoodsEnglish();
-      } else if (language === 'pt') {
-        foodsData = await FoodServices.getAllFoodsPortugues();
-      }
-      // Verificar que foodsData no sea undefined antes de asignarlo
-      if (foodsData) {
-        setFoods(foodsData);
+      if (isValidLanguage(language)) {
+        const foodsData = await FoodServices.getAllFoods(language);
+        if (foodsData) {
+          setFoods(foodsData);
+        }
       }
     };
     fetchFoods();
