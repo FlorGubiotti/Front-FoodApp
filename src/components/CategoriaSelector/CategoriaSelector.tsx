@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './CategoriaSelector.css';
-import { FoodServices } from '../../services/FoodServices';
+import CategoryService from '../../services/CategoryService';
 import { Categories } from '../../Types/Categories';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
@@ -21,7 +21,8 @@ const CategoriasSelector: React.FC<CategoriasSelectorProps> = ({ onSelectCategor
   useEffect(() => {
     const fetchData = async () => {
       if (isValidLanguage(language)) {
-        const categoriasData = await FoodServices.getAllCategories(language);
+        const categoryService = new CategoryService();
+        const categoriasData = await categoryService.getAll(language);
         if (categoriasData) {
           setCategorias(categoriasData);
         }

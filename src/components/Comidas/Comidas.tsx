@@ -2,7 +2,7 @@ import './Comidas.css';
 import { Food } from '../../Types/Food';
 import { useState, useEffect } from 'react';
 import { Categories } from '../../Types/Categories';
-import { FoodServices } from '../../services/FoodServices';
+import CategoryService from '../../services/CategoryService';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -25,7 +25,8 @@ const Comidas = ({ foods }: { foods: Food[] }) => {
   useEffect(() => {
     const fetchData = async () => {
       if (isValidLanguage(language)) {
-        const categoriasData = await FoodServices.getAllCategories(language);
+        const categoryService = new CategoryService();
+        const categoriasData = await categoryService.getAll(language);
         if (categoriasData) {
           setCategorias(categoriasData);
         }

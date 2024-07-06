@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { FoodServices } from '../../services/FoodServices';
 import CategoriaSelector from '../CategoriaSelector/CategoriaSelector';
 import Comidas from '../Comidas/Comidas';
 import { Food } from '../../Types/Food';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
+import FoodService from '../../services/FoodService';
 
 const Categorias: React.FC = () => {
   const [foods, setFoods] = useState<Food[]>([]);
@@ -18,7 +18,8 @@ const Categorias: React.FC = () => {
   useEffect(() => {
     const fetchFoods = async () => {
       if (isValidLanguage(language)) {
-        const foodsData = await FoodServices.getAllFoods(language);
+        const foodService = new FoodService();
+        const foodsData = await foodService.getAll(language);
         if (foodsData) {
           setFoods(foodsData);
         }
